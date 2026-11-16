@@ -1,0 +1,31 @@
+{
+  "api_version": "after-sales-mock-v1",
+  "data_contract_version": "C-004-v1",
+  "dataset_id": "8eb383698f2ac6a5baed126126e40c8a41e176d2a2e177beb4969b1a3955c26b",
+  "dataset_root": "data/c004-r01/baseline",
+  "files": {
+    "data/c004-r01/baseline/database/ecommerce.db": "34eab2b81e27af39a7b23428529c3d9a29d2744cf7e95cb4e5a8a123871a0d47",
+    "data/c004-r01/baseline/manifest.json": "9a00af922cf826af096ffc6dc40d5b74868368d33a3c2579ead7cf4cc176ddd0",
+    "data/c004-r01/baseline/normalized/orders.jsonl": "8ab9e7a5cb113e9541e63e5ffacc6e0d9be8499de84f56a201bef497968e3141",
+    "data/c004-r01/baseline/snapshots/baseline/snapshot.json": "5af7bed92ebae5351ead0721a348a5e8c4469bfcef3da058378a8e302a4c1d32",
+    "database/__init__.py": "453a5f5484599d480298da0d379e3616c43533a019cf458cd58b5433dab301d6",
+    "database/business_snapshot.py": "21b07af5fc9f7a12c97adf419fa45678e7dd726d24e2f3231276104d96b12a67",
+    "database/contracts.py": "fa92a7ce4bbf293b0a38d12ecd138ae879afac802e1cd8eca424790bce8a0cce",
+    "database/normalize.py": "46d9ad6e2b65964406345bdc2561cc36bc2cd7da25086827329e5f6323fbfddd",
+    "database/snapshot.py": "7c6df972dea4549b7bf5599d82c0334e5771015b6bcc271f2aa477beff0d6633",
+    "docs/Mock接口契约-v1.md": "632c0082a1be59370d0f14cbaa94e08275becafbf3f25d442520da46df8842d0",
+    "mock/__init__.py": "552e2eb009323e100dcf585f2c3aa3b7452144951854476e76f45467d7e3d7c0",
+    "mock/faults/baseline-http.json": "b8610661b9f54aaa4bc0fc6250a9e12e66d2877b49807d4d10b7470d938b1520",
+    "mock/faults/read-429-then-ok.json": "ce38c7d6a79c136fe65a9e612ed01921e9244b5a2d298f661cd8bdc1b902e241",
+    "mock/faults/read-500-three-times.json": "54c0c81e4008edd1acd148d70fb7f89dbc4f999a62ef8bfe9e7fb7bda6bd3079",
+    "mock/faults/runtime-http.json": "f94b2b6f19c49e107e832393fdbbda882a1007698fd7bdd05100dc06fde77d8e",
+    "mock/verify_freeze.py": "879e7d6d09fc96243ebe735411ae73c8b7bc911171fb0a824ececa14117b8ba9",
+    "mock_server.py": "253fe8e5af1485b7f8d6ff4243f491ff8d8a1ad374771e5208c11ee6788bf6d3",
+    "mock_service/__init__.py": "d5b055a609167d5ee2458455c73e5a35dccc496cc2b6917394583cff38a99271",
+    "mock_service/app.py": "d8631a12de29afee679035972127d1515ed7bf6659dd6db65278e244e4ae3bbe",
+    "mock_service/contracts.py": "7c5e0ef804067452d6c824640e6bd9773a1f5ca4bd7fc1541a751bd1cd7ed0c4",
+    "mock_service/faults.py": "620a220fe5941a180afcbf10622f131599ec1a196792a2f44c43b4643933d1db"
+  },
+  "freeze_version": 1,
+  "start_command": "python -m uvicorn mock_server:app --host 127.0.0.1 --port 8090 --workers 1"
+}

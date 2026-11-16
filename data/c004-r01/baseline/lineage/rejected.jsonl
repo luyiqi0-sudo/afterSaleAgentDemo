@@ -1,0 +1,3 @@
+{"reason": "金额必须为 0..1000000 的整数分", "source_id": "bad-amount", "source_line": 201}
+{"reason": "未知订单状态码", "source_id": "bad-status", "source_line": 202}
+{"reason": "订单 ID 和归属用户必填", "source_id": "bad-owner", "source_line": 203}

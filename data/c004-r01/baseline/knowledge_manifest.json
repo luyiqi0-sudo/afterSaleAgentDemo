@@ -1,0 +1,948 @@
+{
+  "conflict_pairs": [
+    {
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "new_doc_id": "invoice-v2",
+      "new_rules": {
+        "issue_business_days": 5
+      },
+      "old_doc_id": "invoice-v1",
+      "old_rules": {
+        "issue_business_days": 10
+      },
+      "overlap_end": null,
+      "overlap_start": "2026-10-01",
+      "policy_key": "invoice",
+      "resolution": "explicit_supersedes_on_overlap"
+    },
+    {
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "new_doc_id": "return_shipping-v2",
+      "new_rules": {
+        "quality_return_payer": "merchant"
+      },
+      "old_doc_id": "return_shipping-v1",
+      "old_rules": {
+        "quality_return_payer": "customer"
+      },
+      "overlap_end": null,
+      "overlap_start": "2026-10-01",
+      "policy_key": "return_shipping",
+      "resolution": "explicit_supersedes_on_overlap"
+    },
+    {
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "new_doc_id": "returns-v2",
+      "new_rules": {
+        "return_days": 14
+      },
+      "old_doc_id": "returns-v1",
+      "old_rules": {
+        "return_days": 7
+      },
+      "overlap_end": null,
+      "overlap_start": "2026-10-01",
+      "policy_key": "returns",
+      "resolution": "explicit_supersedes_on_overlap"
+    },
+    {
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "new_doc_id": "ticket_response-v2",
+      "new_rules": {
+        "response_hours": 24
+      },
+      "old_doc_id": "ticket_response-v1",
+      "old_rules": {
+        "response_hours": 72
+      },
+      "overlap_end": null,
+      "overlap_start": "2026-10-01",
+      "policy_key": "ticket_response",
+      "resolution": "explicit_supersedes_on_overlap"
+    },
+    {
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "new_doc_id": "warranty-v2",
+      "new_rules": {
+        "warranty_days": 365
+      },
+      "old_doc_id": "warranty-v1",
+      "old_rules": {
+        "warranty_days": 180
+      },
+      "overlap_end": null,
+      "overlap_start": "2026-10-01",
+      "policy_key": "warranty",
+      "resolution": "explicit_supersedes_on_overlap"
+    }
+  ],
+  "documents": [
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-01",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "returns-v2",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "returns-v2.md",
+      "historical": false,
+      "policy_key": "returns",
+      "responsibility": "普通商品退货期限（当前业务规则）",
+      "rules": {
+        "return_days": 14
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [
+        "returns-v1"
+      ],
+      "time_basis": "query_date",
+      "title": "普通商品退货期限",
+      "version": 2
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-02",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "invoice-v2",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "invoice-v2.md",
+      "historical": false,
+      "policy_key": "invoice",
+      "responsibility": "发票开具时限（当前业务规则）",
+      "rules": {
+        "issue_business_days": 5
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [
+        "invoice-v1"
+      ],
+      "time_basis": "query_date",
+      "title": "发票开具时限",
+      "version": 2
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-03",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "warranty-v2",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "warranty-v2.md",
+      "historical": false,
+      "policy_key": "warranty",
+      "responsibility": "标准保修期限（当前业务规则）",
+      "rules": {
+        "warranty_days": 365
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [
+        "warranty-v1"
+      ],
+      "time_basis": "query_date",
+      "title": "标准保修期限",
+      "version": 2
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-04",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "return_shipping-v2",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "return_shipping-v2.md",
+      "historical": false,
+      "policy_key": "return_shipping",
+      "responsibility": "退货运费承担（当前业务规则）",
+      "rules": {
+        "quality_return_payer": "merchant"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [
+        "return_shipping-v1"
+      ],
+      "time_basis": "query_date",
+      "title": "退货运费承担",
+      "version": 2
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-05",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "ticket_response-v2",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "ticket_response-v2.md",
+      "historical": false,
+      "policy_key": "ticket_response",
+      "responsibility": "售后工单响应时限（当前业务规则）",
+      "rules": {
+        "response_hours": 24
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [
+        "ticket_response-v1"
+      ],
+      "time_basis": "query_date",
+      "title": "售后工单响应时限",
+      "version": 2
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-06",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "exchange-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "exchange-v1.md",
+      "historical": false,
+      "policy_key": "exchange",
+      "responsibility": "换货申请（当前业务规则）",
+      "rules": {
+        "exchange_days": 14
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "换货申请",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-07",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "cancel-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "cancel-v1.md",
+      "historical": false,
+      "policy_key": "cancel",
+      "responsibility": "取消订单（当前业务规则）",
+      "rules": {
+        "cancellation_stage": "before_shipment"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "取消订单",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-08",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "address-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "address-v1.md",
+      "historical": false,
+      "policy_key": "address",
+      "responsibility": "收货地址修改（当前业务规则）",
+      "rules": {
+        "address_stage": "before_shipment"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "收货地址修改",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-09",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "invoice_title-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "invoice_title-v1.md",
+      "historical": false,
+      "policy_key": "invoice_title",
+      "responsibility": "发票抬头资料（当前业务规则）",
+      "rules": {
+        "required_fields": "title_and_tax_id"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "发票抬头资料",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-10",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "invoice_correction-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "invoice_correction-v1.md",
+      "historical": false,
+      "policy_key": "invoice_correction",
+      "responsibility": "发票更正（当前业务规则）",
+      "rules": {
+        "correction_process": "void_then_reissue"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "发票更正",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-11",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "damaged-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "damaged-v1.md",
+      "historical": false,
+      "policy_key": "damaged",
+      "responsibility": "破损签收处理（当前业务规则）",
+      "rules": {
+        "photo_required": true
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "破损签收处理",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-12",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "missing_item-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "missing_item-v1.md",
+      "historical": false,
+      "policy_key": "missing_item",
+      "responsibility": "缺件处理（当前业务规则）",
+      "rules": {
+        "evidence": "packing_photo"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "缺件处理",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-13",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "wrong_item-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "wrong_item-v1.md",
+      "historical": false,
+      "policy_key": "wrong_item",
+      "responsibility": "错发处理（当前业务规则）",
+      "rules": {
+        "verified_shipping_payer": "merchant"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "错发处理",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-14",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "delivery_delay-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "delivery_delay-v1.md",
+      "historical": false,
+      "policy_key": "delivery_delay",
+      "responsibility": "配送延误（当前业务规则）",
+      "rules": {
+        "escalate_after_days": 3
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "配送延误",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-15",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "tracking-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "tracking-v1.md",
+      "historical": false,
+      "policy_key": "tracking",
+      "responsibility": "物流状态说明（当前业务规则）",
+      "rules": {
+        "source": "latest_snapshot"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "物流状态说明",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-16",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "lost_parcel-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "lost_parcel-v1.md",
+      "historical": false,
+      "policy_key": "lost_parcel",
+      "responsibility": "疑似丢件（当前业务规则）",
+      "rules": {
+        "resolution": "carrier_verification"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "疑似丢件",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-17",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "repair-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "repair-v1.md",
+      "historical": false,
+      "policy_key": "repair",
+      "responsibility": "维修申请（当前业务规则）",
+      "rules": {
+        "proof": "order_and_fault"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "维修申请",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-18",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "accessories-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "accessories-v1.md",
+      "historical": false,
+      "policy_key": "accessories",
+      "responsibility": "配件退回（当前业务规则）",
+      "rules": {
+        "return_scope": "complete_accessories"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "配件退回",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-19",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "sealed-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "sealed-v1.md",
+      "historical": false,
+      "policy_key": "sealed",
+      "responsibility": "特殊商品退货（当前业务规则）",
+      "rules": {
+        "review_required": true
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "特殊商品退货",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-20",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "refund_method-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "refund_method-v1.md",
+      "historical": false,
+      "policy_key": "refund_method",
+      "responsibility": "退款渠道说明（当前业务规则）",
+      "rules": {
+        "refund_channel": "original_payment"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "退款渠道说明",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-21",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "refund_failure-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "refund_failure-v1.md",
+      "historical": false,
+      "policy_key": "refund_failure",
+      "responsibility": "退款失败处理（当前业务规则）",
+      "rules": {
+        "action": "suggest_ticket"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "退款失败处理",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-22",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "stock-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "stock-v1.md",
+      "historical": false,
+      "policy_key": "stock",
+      "responsibility": "库存说明（当前业务规则）",
+      "rules": {
+        "reservation": "not_guaranteed_by_query"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "库存说明",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-23",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "privacy-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "privacy-v1.md",
+      "historical": false,
+      "policy_key": "privacy",
+      "responsibility": "用户数据保护（当前业务规则）",
+      "rules": {
+        "access_scope": "own_orders"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "用户数据保护",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-24",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "confirmation-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "confirmation-v1.md",
+      "historical": false,
+      "policy_key": "confirmation",
+      "responsibility": "工单确认规则（当前业务规则）",
+      "rules": {
+        "write_confirmation": true
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "工单确认规则",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-25",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "service_failure-v1",
+      "effective_date": "2026-10-01",
+      "expires_at": null,
+      "file": "service_failure-v1.md",
+      "historical": false,
+      "policy_key": "service_failure",
+      "responsibility": "服务异常说明（当前业务规则）",
+      "rules": {
+        "unknown_write": "manual_reconciliation"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": null,
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "服务异常说明",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-26",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "returns-v1",
+      "effective_date": "2025-01-01",
+      "expires_at": null,
+      "file": "returns-v1.md",
+      "historical": true,
+      "policy_key": "returns",
+      "responsibility": "普通商品退货期限（历史对照，仅用于版本冲突测试）",
+      "rules": {
+        "return_days": 7
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": "returns-v2",
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "普通商品退货期限",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-27",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "invoice-v1",
+      "effective_date": "2025-01-01",
+      "expires_at": null,
+      "file": "invoice-v1.md",
+      "historical": true,
+      "policy_key": "invoice",
+      "responsibility": "发票开具时限（历史对照，仅用于版本冲突测试）",
+      "rules": {
+        "issue_business_days": 10
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": "invoice-v2",
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "发票开具时限",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-28",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "warranty-v1",
+      "effective_date": "2025-01-01",
+      "expires_at": null,
+      "file": "warranty-v1.md",
+      "historical": true,
+      "policy_key": "warranty",
+      "responsibility": "标准保修期限（历史对照，仅用于版本冲突测试）",
+      "rules": {
+        "warranty_days": 180
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": "warranty-v2",
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "标准保修期限",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-29",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "return_shipping-v1",
+      "effective_date": "2025-01-01",
+      "expires_at": null,
+      "file": "return_shipping-v1.md",
+      "historical": true,
+      "policy_key": "return_shipping",
+      "responsibility": "退货运费承担（历史对照，仅用于版本冲突测试）",
+      "rules": {
+        "quality_return_payer": "customer"
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": "return_shipping-v2",
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "退货运费承担",
+      "version": 1
+    },
+    {
+      "anchors": {
+        "1": "policy-rule",
+        "2": "simulation-scope"
+      },
+      "catalog_id": "DOC-30",
+      "conditions": {
+        "channel": "online",
+        "region": "CN"
+      },
+      "contract_version": "C-004-v1",
+      "doc_id": "ticket_response-v1",
+      "effective_date": "2025-01-01",
+      "expires_at": null,
+      "file": "ticket_response-v1.md",
+      "historical": true,
+      "policy_key": "ticket_response",
+      "responsibility": "售后工单响应时限（历史对照，仅用于版本冲突测试）",
+      "rules": {
+        "response_hours": 72
+      },
+      "source_type": "candidate_synthetic",
+      "superseded_by": "ticket_response-v2",
+      "supersedes": [],
+      "time_basis": "query_date",
+      "title": "售后工单响应时限",
+      "version": 1
+    }
+  ],
+  "numbering": "repository catalog; not G-002 example numbering",
+  "source_type": "candidate_synthetic"
+}

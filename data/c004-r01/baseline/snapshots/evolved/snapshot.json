@@ -1,0 +1,44 @@
+{
+  "as_of": "2026-11-16T23:59:59+08:00",
+  "base_dataset_id": "8eb383698f2ac6a5baed126126e40c8a41e176d2a2e177beb4969b1a3955c26b",
+  "changes": [
+    {
+      "effective_at": "2026-11-16T23:59:59+08:00",
+      "field": "status",
+      "from": 3,
+      "order_id": "ACC-001",
+      "to": 5
+    },
+    {
+      "effective_at": "2026-11-16T23:59:59+08:00",
+      "field": "status",
+      "from": 3,
+      "order_id": "ACC-003",
+      "to": 5
+    },
+    {
+      "effective_at": "2026-11-16T23:59:59+08:00",
+      "field": "status",
+      "from": 3,
+      "order_id": "ACC-006",
+      "to": 5
+    },
+    {
+      "effective_at": "2026-11-16T23:59:59+08:00",
+      "field": "status",
+      "from": 3,
+      "order_id": "ACC-011",
+      "to": 5
+    },
+    {
+      "effective_at": "2026-11-16T23:59:59+08:00",
+      "field": "status",
+      "from": 3,
+      "order_id": "ACC-012",
+      "to": 5
+    }
+  ],
+  "formal_mock_integration": false,
+  "profile": "evolved",
+  "version": "snapshot-v1"
+}

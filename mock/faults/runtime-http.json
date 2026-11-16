@@ -1,0 +1,4 @@
+{
+  "GET /orders/ACC-011": [{"action": "429", "retry_after": 0}, "500", "ok"],
+  "POST /tickets": [{"action": "timeout_after", "delay_seconds": 0.8}]
+}
