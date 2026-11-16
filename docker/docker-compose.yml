@@ -1,0 +1,65 @@
+name: after-sales-agent
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    env_file: ../.env
+    environment:
+      BUSINESS_BASE_URL: http://business:8090
+      DATASET_ROOT: /app/data/c004-r01/baseline
+      DATABASE_PATH: /app/database/ecommerce.db
+      DICTIONARY_PATH: /app/database/dictionary.json
+      KNOWLEDGE_PATH: /app/knowledge
+      RUNTIME_DIR: /runtime
+      VECTOR_BACKEND: pgvector
+      PG_DSN: postgresql://after_sales_agent:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@vector:5432/after_sales_agent
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ../data/c004-r01/baseline:/app/data/c004-r01/baseline:ro
+      - api_runtime:/runtime
+    depends_on:
+      vector:
+        condition: service_healthy
+      business:
+        condition: service_healthy
+    stop_grace_period: 45s
+  vector:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: after_sales_agent
+      POSTGRES_DB: after_sales_agent
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:55435:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "after_sales_agent", "-d", "after_sales_agent"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+  business:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: ["python", "-m", "uvicorn", "mock_server:app", "--host", "0.0.0.0", "--port", "8090", "--workers", "1"]
+    environment:
+      DATASET_ROOT: /app/data/c004-r01/baseline
+      MOCK_TICKET_DB: /runtime/tickets.sqlite
+      BUSINESS_API_TOKEN: ${BUSINESS_SERVICE_TOKEN:?Set BUSINESS_SERVICE_TOKEN in .env}
+    ports:
+      - "127.0.0.1:8090:8090"
+    volumes:
+      - ../data/c004-r01/baseline:/app/data/c004-r01/baseline:ro
+      - mock_runtime:/runtime
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8090/health',timeout=2).read()"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+volumes:
+  api_runtime:
+  mock_runtime:
+  pg_data:
