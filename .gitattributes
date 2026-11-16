@@ -1,0 +1,18 @@
+# Normalize ordinary text, but preserve byte-level frozen evidence on every OS.
+* text=auto eol=lf
+*.png binary
+*.db binary
+/data/** -text
+/knowledge/*.md -text
+/eval/golden_dataset.jsonl -text
+/mock/** -text
+/mock_service/** -text
+/mock_server.py -text
+/database/__init__.py -text
+/database/business_snapshot.py -text
+/database/contracts.py -text
+/database/normalize.py -text
+/database/snapshot.py -text
+/database/schema.sql -text
+/database/dictionary.json -text
+/docs/Mock接口契约-v1.md -text

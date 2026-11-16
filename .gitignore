@@ -1,0 +1,55 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+runtime/
+data/seed/
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite-journal
+*.log
+# Frozen synthetic SQLite fixtures are deliverables, not runtime databases.
+!database/ecommerce.db
+!data/c004-r01/baseline/database/ecommerce.db
+.superpowers/
+ai-after-sales-agent-collab/
+dist/
+*.egg-info/
+
+# Publish only the frozen dataset required by the application and regression suite.
+/data/*
+!/data/c004-r01/
+/data/c004-r01/*
+!/data/c004-r01/baseline/
+
+# Interview delivery documents only. Local reviews/history/plans stay on disk.
+/docs/*
+!/docs/部署手册.md
+!/docs/部署与FAQ.md
+!/docs/架构设计.md
+!/docs/交付清单.md
+!/docs/演示与交付清单.md
+!/docs/需求追踪矩阵.md
+!/docs/风险与待确认事项.md
+!/docs/Mock接口契约-v1.md
+!/docs/reports/
+/docs/reports/*
+!/docs/reports/交付验证记录.md
+!/docs/reports/trace-demo.png
+!/docs/reports/trace-detail.png
+
+# Local deployment overrides and offline images are not source deliverables.
+/docker/*
+!/docker/Dockerfile
+!/docker/docker-compose.yml
+/wheelhouse/
+/*.tar
